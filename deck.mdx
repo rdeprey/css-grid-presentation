@@ -1,0 +1,243 @@
+import base from './theme'
+import { Wrapper, SplitLayoutLeft } from './Wrapper'
+import canIUseImg from './images/browser-support.jpg'
+export const theme = base
+
+# CSS Grid 
+
+March 17, 2020
+
+---
+
+# Why Use CSS Grid?
+
+* We already have Flexbox to layout, align, and distribute dynamic content in user interfaces
+* Flexbox is much better than floats, tables and other old-school layout techniques
+
+---
+
+# 2D in Nature
+
+* Lets us layout interfaces in terms of columns and rows
+* Better at handling complex layouts
+* First CSS module created specifically to address layout problems we've been struggling with for years!
+
+---
+# Browser Support
+
+<SplitLayoutLeft>
+  CSS grid is now supported in Chrome, Edge, Safari, and Firefox
+
+  Internet Explorer 11 has partial support and uses an older version of the syntax
+
+  <img src={canIUseImg} alt="Browser Support Chart from caniuse.com" />
+</SplitLayoutLeft>
+
+---
+
+# Vocabulary
+
+## Grid Track
+
+* The rows and columns of the grid
+* The space between two grid lines
+
+---
+
+# Vocabulary
+
+## Grid Lines
+
+* Dividing lines that make up the structure of the grid
+* Are vertical and horizontal
+* Are numbered by default but can also be named
+
+---
+
+# Grid Lines
+
+* You define grid tracks; grid lines are automatically defined by the grid
+* Allow us to position items in the grid
+* Numbered direction is based on the writing mode of the page
+* Can name lines to make positioning easier
+
+---
+
+# Vocabulary
+
+## Grid Cell
+
+* A single "unit" of the grid
+* Similar to table cells
+
+---
+
+# Vocabulary
+
+## Grid Area
+
+* The total space surrounded by four grid lines
+* Can be made up of any number of grid cells
+* Doesn't have to represent all cells in a grid, but can
+
+---
+
+# Firefox Grid Inspector
+
+Talk a little about the tools offered and how we'll use them in examples
+
+---
+
+# Creating a Grid
+
+Every grid starts with a parent container with the property `display: grid`
+
+````css
+.grid {
+    display: grid;
+}
+````
+````html
+<div class="grid">
+    I'm a grid!
+</div>
+````
+
+<div style="display: grid;border: 1px dotted red;">I'm a grid!</div>
+
+---
+
+Easy, right? A one column grid isn't very interesting though, so let's add grid tracks!
+
+---
+
+# Specifying Grid Tracks
+
+Remember, grid tracks are what hold your grid items.
+
+We create these by setting `grid-template-rows` and `grid-template-columns` on the parent container.
+
+````css
+.grid {
+    display: grid;
+    grid-template-rows: 50px 2fr;
+    grid-template-columns: 25% 1fr 100px;
+}
+````
+````html
+<div class="grid">
+    <div class="grid-item">Item 1</div>
+    <div class="grid-item">Item 2</div>
+    <div class="grid-item">Item 3</div>
+    <div class="grid-item">Item 4</div>
+</div>
+````
+
+<div style="display: grid;grid-template-rows:50px 2fr;grid-template-columns:25% 1fr 100px;border: 1px dotted red;">
+    <div class="grid-item" style="border: 1px dotted red;">Item 1</div>
+    <div class="grid-item" style="border: 1px dotted red;">Item 2</div>
+    <div class="grid-item" style="border: 1px dotted red;">Item 3</div>
+    <div class="grid-item" style="border: 1px dotted red;">Item 4</div>
+</div>
+
+---
+
+# Creating Grid Items
+
+
+
+---
+
+# Implicit vs. Explicit Grid
+
+* _Explicit_ grid is based on the `grid-template-columns` and `grid-template-rows` you define
+* If there's more content than there are defined rows and columns, then the grid creates rows and columns in the _implicit_ grid
+
+---
+
+# Implicit Grid
+
+* The grid tracks in rows and columns in the _implicit_ grid are auto-sized by default based on their content
+* The `grid-auto-rows` and `grid-auto-columns` properties define size of implicit grid tracks
+
+---
+
+# Track Size and `minmax()`
+
+* `minmax()` specifies minimum grid track size for automatically created rows and columns
+  * Still ensures that they expand to fit any content that's added
+* Can use this when setting `grid-auto-rows` and `grid-auto-columns` properties
+
+---
+
+# Positioning Items Against Lines
+
+* You target a __line__ when placing items, not a __track__
+* Items are placed using the following properties:
+  * `grid-column-start`
+  * `grid-column-end`
+  * `grid-row-start`
+  * `grid-row-end`
+* Don't need to specify `grid-row-end` if you want a grid item to span a whole row
+
+---
+
+# Grid Item Placement Algorithm
+
+* Determines the order used for placing grid items in the grid
+* Placement flow behavior is set with the `grid-auto-flow` property
+* __Any grid item positioned to start or end on a line that goes in the same direction as the grid will be given priority placement. Everything else will flow around it.__
+
+---
+
+# Placement priorities:
+
+1. Same-direction positioning (i.e., `grid-auto-flow: row | column`)
+2. Order property (i.e., `order: 2`)
+3. Document order
+
+---
+
+# `grid-auto-flow: row` (default placement)
+
+* Items fill all of the slots in the current _row_ before starting to fill the next row
+* Algorithm prioritizes any item whose __row start__ or __row end__ property is defined
+  * Positions these items first. All of the other items are then flowed in around it using the normal flow
+* Column positioning doesn't get priority with this flow setting
+  * If an item has a column position, the browser will skip to the specified column. This can leave empty cells in the grid.
+
+---
+
+# `grid-auto-flow: column`
+
+* Items fill up the current _column_ from top to bottom before starting to fill the next column
+* Algorithm prioritizes any item whose __column start__ or __column end__ property is defined
+* Row positioning doesn't get priority with this flow setting
+
+---
+
+# The `span` keyword
+
+The `span` keyword will make grid items span multiple rows or columns, but doesn't increase their placement priority
+
+---
+
+# Order
+
+* Can use `order` property to change the order of grid items, overriding the default document order placement
+* Works just like Flexbox order, with items set to `order: 0` by default
+* Giving a grid item `order: 1` makes it show up at the end
+* Can move grid items to beginning with negative order (`order: -1`), also like Flexbox
+
+---
+
+# Order happens:
+* _AFTER_ row start/end positioning (in `grid-auto-flow: row`)
+* _AFTER_ column start/end positioning (in `grid-auto-flow: column`)
+
+---
+
+# Additional Reading
+
+* Rachel Andrew's [_Get Ready for CSS Grid Layout_](https://abookapart.com/products/get-ready-for-css-grid-layout)
+* [_How Items Flow Into a CSS Grid_](https://gedd.ski/post/grid-item-placement/)
