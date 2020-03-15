@@ -17,7 +17,28 @@ export default {
     },
     img: {
       height: 'auto',
-      width: 'auto'
-    }
+      width: 'auto',
+      marginBottom: '10px'
+    },
+    a: {
+      color: '#ffffff'
+    },
+    table: {
+      borderCollapse: 'collapse'
+    },
+    th: {
+      textAlign: 'left',
+      fontSize: '1.5rem',
+      padding: '0.75rem 1.5rem 0.75rem 0.75rem',
+      border: '1px solid #ffffff'
+    },
+    td: {
+      fontSize: '1.5rem',
+      padding: '0.75rem 1.5rem 0.75rem 0.75rem',
+      border: '1px solid #ffffff',
+      '&:first-child': {
+        width: '25%'
+      }
+    },
   },
 };

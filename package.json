@@ -3,6 +3,7 @@
     "version": "1.0.0",
     "description": "",
     "scripts": {
+        "build": "mdx-deck build deck.mdx --no-html",
         "start": "node_modules/.bin/mdx-deck deck.mdx",
         "test": "echo \"Error: no test specified\" && exit 1"
     },

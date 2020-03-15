@@ -7,19 +7,23 @@ export const Wrapper = ({ children }) => (
   );
 
 export const SplitLayoutLeft = ({ children }) => {
-  const images = children.filter(child => {
-    return child.props && child.props.src;
+  if (!children.length) {
+    return children;
+  }
+
+  const rightContent = children.filter(child => {
+    return child.props && (child.props.src || child.props.className === 'caption' || child.props.className === 'example');
   });
 
   children = children.filter(child => {
-    return !images.includes(child);
+    return !rightContent.includes(child);
   });
 
   return (
     <div style={{
       display: 'grid',
-      gridTemplateColumns: '45% 45%',
-      gridColumnGap: '10%',
+      gridTemplateColumns: '50% 45%',
+      gridColumnGap: '5%',
     }}>
       <div style={{
         display: 'flex',
@@ -28,8 +32,12 @@ export const SplitLayoutLeft = ({ children }) => {
       }}>
         {children}
       </div>
-      <div>
-        {images}
+      <div style={{
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+      }}>
+        {rightContent}
       </div>
     </div>
   )
