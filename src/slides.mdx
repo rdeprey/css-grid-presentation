@@ -1,19 +1,17 @@
-import base from './theme'
-import { Wrapper, SplitLayoutLeft } from './Wrapper'
-import canIUseImg from './images/browser-support.jpg'
-import gridLineExample from './images/grid-line-example.jpg'
-import gridLineExample2 from './images/grid-line-example-2.jpg'
-import gridTrackExample from './images/grid-track-example.jpg'
-import gridCellExample from './images/grid-cell-example.jpg'
-import gridAreaDiagram from './images/grid-area-diagram.png'
-import nestedGridExample from './images/nested-grid-example.jpg'
-import subgridExample from './images/subgrid-example.jpg'
-import minMaxDiagram from './images/minmax-diagram.png'
-import sparseDenseStackExample from './images/sparse-dense-example.jpg'
-import firefoxDevtools from './images/firefox-devtools.jpg'
-import firefoxGridOverlay from './images/firefox-grid-overlay.jpg'
-import firefoxSubgridOverlay from './images/firefox-subgrid-overlay.jpg'
-export const theme = base
+import { Wrapper, SplitLayoutLeft } from './Wrapper';
+import canIUseImg from './images/browser-support.jpg';
+import gridLineExample from './images/grid-line-example.jpg';
+import gridLineExample2 from './images/grid-line-example-2.jpg';
+import gridTrackExample from './images/grid-track-example.jpg';
+import gridCellExample from './images/grid-cell-example.jpg';
+import gridAreaDiagram from './images/grid-area-diagram.png';
+import nestedGridExample from './images/nested-grid-example.jpg';
+import subgridExample from './images/subgrid-example.jpg';
+import minMaxDiagram from './images/minmax-diagram.png';
+import sparseDenseStackExample from './images/sparse-dense-example.jpg';
+import firefoxDevtools from './images/firefox-devtools.jpg';
+import firefoxGridOverlay from './images/firefox-grid-overlay.jpg';
+import firefoxSubgridOverlay from './images/firefox-subgrid-overlay.jpg';
 
 <Head>
   <link rel="icon" href="/favicon.ico" sizes="16x16" />
@@ -21,9 +19,9 @@ export const theme = base
 
 # CSS Grid 
 
-March 17, 2020
+<p style={{textAlign: 'center'}}>March 17, 2020</p>
 
-<iframe src="https://giphy.com/embed/13t8qWO16fHw9W" style={{width: '50%'}} height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p className="caption" style={{margin: 0, textAlign: 'center'}}><a href="https://giphy.com/gifs/grid-13t8qWO16fHw9W" style={{fontSize: '16px'}}>via GIPHY</a></p>
+<iframe src="https://giphy.com/embed/13t8qWO16fHw9W" style={{width: '50%', margin: '0 auto'}} height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p className="caption" style={{margin: 0, textAlign: 'center'}}><a href="https://giphy.com/gifs/grid-13t8qWO16fHw9W" style={{fontSize: '16px'}}>via GIPHY</a></p>
 
 ---
 
@@ -61,7 +59,6 @@ Every grid starts with a parent container with the property `display: grid`
 
 <iframe
      src="https://codesandbox.io/embed/compassionate-bash-94fvs?autoresize=1&fontsize=14&view=preview&hidenavigation=1&initialpath=%2Fgrid.html&module=%2Fgrid.css&theme=dark"
-     style={{width: '100%', height: '500px', border: 0, borderRadius: '4px', overflow: 'hidden'}}
      title="compassionate-bash-94fvs"
      allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
      sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
@@ -101,7 +98,6 @@ Easy, right? A one column grid isn't very interesting though, so let's add grid 
 
 <iframe
      src="https://codesandbox.io/embed/compassionate-bash-94fvs?autoresize=1&fontsize=14&view=preview&hidenavigation=1&initialpath=%2Fgrid-tracks.html&module=%2Fgrid.css&theme=dark"
-     style={{width: '100%', height: '500px', border: 0, borderRadius: '4px', overflow: 'hidden'}}
      title="compassionate-bash-94fvs"
      allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
      sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
@@ -179,7 +175,6 @@ Easy, right? A one column grid isn't very interesting though, so let's add grid 
 
 <iframe
      src="https://codesandbox.io/embed/compassionate-bash-94fvs?autoresize=1&view=preview&fontsize=14&hidenavigation=1&initialpath=grid-gaps.html&module=%2Fgrid.css&theme=dark"
-     style={{width: '100%', height: '500px', border: 0, borderRadius: '4px', overflow: 'hidden'}}
      title="compassionate-bash-94fvs"
      allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
      sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
@@ -212,7 +207,6 @@ Easy, right? A one column grid isn't very interesting though, so let's add grid 
 
 <iframe
      src="https://codesandbox.io/embed/compassionate-bash-94fvs?autoresize=1&fontsize=14&view=preview&hidenavigation=1&initialpath=grid-items.html&module=%2Fgrid.css&theme=dark"
-     style={{width: '100%', height: '500px', border: 0, borderRadius: '4px', overflow: 'hidden'}}
      title="compassionate-bash-94fvs"
      allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
      sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
@@ -244,7 +238,6 @@ Easy, right? A one column grid isn't very interesting though, so let's add grid 
 
 <iframe
      src="https://codesandbox.io/embed/compassionate-bash-94fvs?autoresize=1&fontsize=14&view=preview&hidenavigation=1&initialpath=%2Fgrid-areas.html&module=%2Fgrid.css&theme=dark"
-     style={{width: '100%', height: '500px', border: 0, borderRadius: '4px', overflow: 'hidden'}}
      title="compassionate-bash-94fvs"
      allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
      sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
@@ -356,6 +349,21 @@ Items fill all slots in the current _row_ before filling the next row
 
 Prioritizes items with __row start__ or __row end__ property. Other items are then flowed in around it using the normal flow.
 
+<small className="caption" style={{fontSize: '20px', textAlign: 'center'}}><em>Row start</em> and <em>row end</em> properties not defined</small>
+<img src="https://gedd.ski/gif/grid-item-placement/1.gif" alt="Row auto-flow grid placement" style={{width: '70%', margin: '5px auto 25px'}} />
+
+<small className="caption" style={{fontSize: '20px', textAlign: 'center'}}><em>Row start</em> and <em>row end</em> properties defined</small>
+<img src="https://gedd.ski/gif/grid-item-placement/3.gif" alt="Item placement in grids with grid-auto-flow: row" style={{width: '70%', margin: '5px auto'}} />
+
+<small className="caption" style={{fontSize: '16px', textAlign: 'center'}}>Geddes, Dave. <a href="https://gedd.ski/post/grid-item-placement/">How Items Flow Into a CSS Grid</a></small>
+</SplitLayoutLeft>
+
+---
+
+# `grid-auto-flow: row` (default placement)
+
+<SplitLayoutLeft>
+
 Column positioning doesn't get priority with this flow setting
   * If an item has a column position, the browser will skip to the specified column. This can leave empty cells in the grid.
 
@@ -392,6 +400,17 @@ Column positioning doesn't get priority with this flow setting
 * If auto placing an item leaves empty cells because items don't fit:
   * `sparse`: those cells won't be used
   * `dense`: those cells will be used if smaller items come up later
+
+<img src={sparseDenseStackExample} alt="Sparse, dense, stack CSS grid example" />
+<small className="caption" style={{fontSize: '16px', textAlign: 'center'}}>Rego Casanovas, Manuel. (2014, Jun 19.) <a href="https://blogs.igalia.com/mrego/2014/06/19/css-grid-layout-automatic-placement/">CSS Grid Layout Automatic Placement</a></small>
+</SplitLayoutLeft>
+
+---
+
+# `grid-auto-flow: sparse | dense | stack`
+
+<SplitLayoutLeft>
+
 * With `stack` option, algorithm looks for first empty cell and places all __auto__ positioned items in that cell (regardless of size), stacked on top of each other.
 
 <img src={sparseDenseStackExample} alt="Sparse, dense, stack CSS grid example" />
@@ -419,6 +438,17 @@ Column positioning doesn't get priority with this flow setting
 
 * Can use `order` property to change the order of grid items, overriding the default document order placement
 * Works just like Flexbox order, with items set to `order: 0` by default
+
+<img src="https://gedd.ski/gif/grid-item-placement/order-1.gif" alt="Order in grid placement algorithm" />
+<small className="caption" style={{fontSize: '16px', textAlign: 'center'}}>Geddes, Dave. <a href="https://gedd.ski/post/grid-item-placement/">How Items Flow Into a CSS Grid</a></small>
+</SplitLayoutLeft>
+
+---
+
+# Order
+
+<SplitLayoutLeft>
+
 * Giving a grid item `order: 1` makes it show up at the end
 * Can move grid items to beginning with negative order (`order: -1`), also like Flexbox
 
@@ -455,7 +485,19 @@ Column positioning doesn't get priority with this flow setting
 
 * You can nest grids by setting `display: grid` on a grid item
 * Makes the nested grid independent of the parent grid though
-* Child grid's track sizes don't match the parent's track sizes
+
+<img src={nestedGridExample} alt="Nested grid example" />
+
+<small className="caption" style={{fontSize: '16px', textAlign: 'center'}}>Andrew, Rachel. <em>Smashing Magazine</em>. (2018, Jul 3.) <a href="https://www.smashingmagazine.com/2018/07/css-grid-2/">CSS Grid Level 2: Here Comes Subgrid</a></small>
+</SplitLayoutLeft>
+
+---
+
+# Nested Grids
+
+<SplitLayoutLeft>
+
+Child grid's track sizes don't match the parent's track sizes
 
 __Alignment of the nested grid items with the parent grid becomes difficult__
 
@@ -466,7 +508,7 @@ __Alignment of the nested grid items with the parent grid becomes difficult__
 
 ---
 
-There must be a better way to align nested grids... 🤔
+<p style={{textAlign: 'center'}}>There must be a better way to align nested grids... 🤔</p>
 
 <iframe src="https://giphy.com/embed/wMNK4IfeH86uQ" style={{width: '100%'}} height="259" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p style={{textAlign: 'center', margin: 0}}><a href="https://giphy.com/gifs/funny-willy-wonka-and-the-chocolate-factory-wMNK4IfeH86uQ" style={{fontSize: '16px'}}>via GIPHY</a></p>
 
@@ -482,6 +524,18 @@ There must be a better way to align nested grids... 🤔
 
 * Set the value `subgrid` on the `grid-template-rows` or `grid-template-columns` property (or both) for a grid item
 * Causes the nested grid to use the tracks defined on the parent grid instead of creating its own
+
+<img src={subgridExample} alt="Subgrid example" />
+
+<small className="caption" style={{fontSize: '16px', textAlign: 'center'}}>Andrew, Rachel. <em>Smashing Magazine</em>. (2018, Jul 3.) <a href="https://www.smashingmagazine.com/2018/07/css-grid-2/">CSS Grid Level 2: Here Comes Subgrid</a></small>
+</SplitLayoutLeft>
+
+---
+
+# Subgrids
+
+<SplitLayoutLeft>
+
 * Gaps are also inherited, but you can override them in the subgrid with the `grid-gap` property if desired
 * Only supported by Firefox right now
 

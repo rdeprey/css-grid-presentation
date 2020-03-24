@@ -24,6 +24,8 @@ export const SplitLayoutLeft = ({ children }) => {
       display: 'grid',
       gridTemplateColumns: '50% 45%',
       gridColumnGap: '5%',
+      maxWidth: '100%',
+      height: '100%'
     }}>
       <div style={{
         display: 'flex',
@@ -35,7 +37,7 @@ export const SplitLayoutLeft = ({ children }) => {
       <div style={{
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'center',
+        justifyContent: rightContent.length > 2 ? 'flex-start' : 'center',
       }}>
         {rightContent}
       </div>
