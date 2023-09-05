@@ -1,13 +1,16 @@
 {
-  "name": "spectacle-presentation",
+  "name": "css-grid-presentation",
   "version": "0.0.1",
-  "description": "Spectacle presentation",
+  "description": "CSS Grid Presentation",
   "homepage": "https://rdeprey.github.io/css-grid-presentation/",
   "scripts": {
     "clean": "rimraf dist",
     "build": "webpack",
     "start": "webpack-dev-server --hot",
     "deploy": "gh-pages -d dist"
+  },
+  "engines": {
+    "node": "14.15.1"
   },
   "dependencies": {
     "prop-types": "^15.7.2",

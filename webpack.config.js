@@ -51,14 +51,14 @@ module.exports = {
       },
       {
         test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
+        use: ['style-loader', 'css-loader']
       }
     ]
   },
   // Default for boilerplate generation.
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Spectacle presentation',
+      title: 'CSS Grid Presentation',
       template: './src/index.html'
     })
   ]
