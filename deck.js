@@ -36198,7 +36198,7 @@ function MDXContentWrapperSlide0(props) {
       },
       height: "270",
       frameBorder: "0",
-      class: "giphy-embed",
+      className: "giphy-embed",
       allowFullScreen: true
     }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", {
       className: "caption",
@@ -36388,7 +36388,7 @@ function MDXContentWrapperSlide5(props) {
       },
       height: "270",
       frameBorder: "0",
-      class: "giphy-embed",
+      className: "giphy-embed",
       allowFullScreen: true
     }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", {
       className: "caption",
@@ -38096,7 +38096,7 @@ function MDXContentWrapperSlide38(props) {
       },
       height: "259",
       frameBorder: "0",
-      class: "giphy-embed",
+      className: "giphy-embed",
       allowFullScreen: true
     }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", {
       style: {
