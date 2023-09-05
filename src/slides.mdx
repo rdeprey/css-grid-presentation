@@ -14,37 +14,51 @@ import firefoxGridOverlay from './images/firefox-grid-overlay.jpg';
 import firefoxSubgridOverlay from './images/firefox-subgrid-overlay.jpg';
 
 <Head>
-  <link rel="icon" href="/favicon.ico" sizes="16x16" />
+  <link rel='icon' href='/favicon.ico' sizes='16x16' />
 </Head>
 
-# CSS Grid 
+# CSS Grid
 
-<p style={{textAlign: 'center'}}>March 17, 2020</p>
+<p style={{ textAlign: 'center' }}>March 17, 2020</p>
 
-<iframe src="https://giphy.com/embed/13t8qWO16fHw9W" style={{width: '50%', margin: '0 auto'}} height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p className="caption" style={{margin: 0, textAlign: 'center'}}><a href="https://giphy.com/gifs/grid-13t8qWO16fHw9W" style={{fontSize: '16px'}}>via GIPHY</a></p>
+<iframe
+  src='https://giphy.com/embed/13t8qWO16fHw9W'
+  style={{ width: '50%', margin: '0 auto' }}
+  height='270'
+  frameBorder='0'
+  className='giphy-embed'
+  allowFullScreen></iframe>
+<p className='caption' style={{ margin: 0, textAlign: 'center' }}>
+  <a
+    href='https://giphy.com/gifs/grid-13t8qWO16fHw9W'
+    style={{ fontSize: '16px' }}>
+    via GIPHY
+  </a>
+</p>
 
 ---
 
 # Why Use CSS Grid?
 
-* We already have Flexbox to layout, align, and distribute dynamic content in user interfaces
-* Flexbox is much better than floats, tables and other old-school layout techniques
+- We already have Flexbox to layout, align, and distribute dynamic content in user interfaces
+- Flexbox is much better than floats, tables and other old-school layout techniques
 
 ---
 
 # 2D in Nature
 
-* Lets us layout interfaces in terms of columns and rows
-* Better at handling complex layouts
-* First CSS module created specifically to address layout problems we've been struggling with for years!
+- Lets us layout interfaces in terms of columns and rows
+- Better at handling complex layouts
+- First CSS module created specifically to address layout problems we've been struggling with for years!
 
 ---
+
 # Browser Support
 
 <SplitLayoutLeft>
 
-* CSS grid is now supported in Chrome, Edge, Safari, and Firefox
-* Internet Explorer 11 has partial support and uses an older version of the syntax
+- CSS grid is now supported in Chrome, Edge, Safari, and Firefox
+- Internet Explorer 11 has partial support and uses an older version of the syntax
 
 <img src={canIUseImg} alt="Browser Support Chart from caniuse.com" />
 </SplitLayoutLeft>
@@ -71,7 +85,7 @@ Every grid starts with a parent container with the property `display: grid`
 
 Easy, right? A one column grid isn't very interesting though, so let's add grid tracks!
 
-<iframe src="https://giphy.com/embed/3oz8xtBx06mcZWoNJm" style={{width: '100%'}} height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p className="caption" style={{marginTop: 0, textAlign: 'center'}}><a href="https://giphy.com/gifs/supersimple-train-tracks-NsESN6J13laGW6eTIx" style={{fontSize: '16px'}}>via GIPHY</a></p>
+<iframe src="https://giphy.com/embed/3oz8xtBx06mcZWoNJm" style={{width: '100%'}} height="270" frameBorder="0" className="giphy-embed" allowFullScreen></iframe><p className="caption" style={{marginTop: 0, textAlign: 'center'}}><a href="https://giphy.com/gifs/supersimple-train-tracks-NsESN6J13laGW6eTIx" style={{fontSize: '16px'}}>via GIPHY</a></p>
 </SplitLayoutLeft>
 
 ---
@@ -80,8 +94,8 @@ Easy, right? A one column grid isn't very interesting though, so let's add grid 
 
 <SplitLayoutLeft>
 
-* The rows and columns of the grid
-* The space between two grid lines
+- The rows and columns of the grid
+- The space between two grid lines
 
 <img src={gridTrackExample} alt="Grid tracks" />
 <small className="caption" style={{fontSize: '16px', textAlign: 'center'}}>Moz://a. <a href="https://mozilladevelopers.github.io/playground/css-grid">Introduction to CSS Grid Layout: Terminology</a></small>
@@ -93,8 +107,8 @@ Easy, right? A one column grid isn't very interesting though, so let's add grid 
 
 <SplitLayoutLeft>
 
-* Remember, grid tracks are what hold your grid items.
-* We create these by setting `grid-template-rows` and `grid-template-columns` on the parent container.
+- Remember, grid tracks are what hold your grid items.
+- We create these by setting `grid-template-rows` and `grid-template-columns` on the parent container.
 
 <iframe
      src="https://codesandbox.io/embed/compassionate-bash-94fvs?autoresize=1&fontsize=14&view=preview&hidenavigation=1&initialpath=%2Fgrid-tracks.html&module=%2Fgrid.css&theme=dark"
@@ -108,25 +122,25 @@ Easy, right? A one column grid isn't very interesting though, so let's add grid 
 
 # Creating Repeating Grid Templates
 
-* Can use `repeat()` method to set grid row and column values when you want multiple that are the same
+- Can use `repeat()` method to set grid row and column values when you want multiple that are the same
 
-| Output | Normal | Using repeat() |
-|---|---|---|
-| Four columns at 25% each  | `grid-template-columns: 25% 25% 25% 25%`  | `grid-template-columns: repeat(4, 25%)` |
-| One column at 10%, three at 20%, and one at 30%  | `grid-template-columns: 10% 20% 20% 20% 30%`  | `grid-template-columns: 10% repeat(3, 20%) 30%` |
-| Mixed units. One column at 1fr, two at 50px, and one at 100%  | `grid-template-columns: 1fr 50px 50px 100%`  | `grid-template-columns: 1fr repeat(2, 50px) 100%` |
+| Output                                                       | Normal                                       | Using repeat()                                    |
+| ------------------------------------------------------------ | -------------------------------------------- | ------------------------------------------------- |
+| Four columns at 25% each                                     | `grid-template-columns: 25% 25% 25% 25%`     | `grid-template-columns: repeat(4, 25%)`           |
+| One column at 10%, three at 20%, and one at 30%              | `grid-template-columns: 10% 20% 20% 20% 30%` | `grid-template-columns: 10% repeat(3, 20%) 30%`   |
+| Mixed units. One column at 1fr, two at 50px, and one at 100% | `grid-template-columns: 1fr 50px 50px 100%`  | `grid-template-columns: 1fr repeat(2, 50px) 100%` |
 
 ---
 
 # The `fr` Fraction Unit
 
-* Represents a fraction of the available space in the grid container
-* Can mix units in a grid, like `grid-template-column: 50px 10% 2fr`
+- Represents a fraction of the available space in the grid container
+- Can mix units in a grid, like `grid-template-column: 50px 10% 2fr`
 
-| Output | Examples with `fr` |
-|---|---|
-| Grid with four equal-width columns: | `grid-template-columns: 1fr 1fr 1fr 1fr` |
-| Grid with three columns, one twice the size than the others: | `grid-template-columns: 1fr 2fr 1fr` |
+| Output                                                       | Examples with `fr`                       |
+| ------------------------------------------------------------ | ---------------------------------------- |
+| Grid with four equal-width columns:                          | `grid-template-columns: 1fr 1fr 1fr 1fr` |
+| Grid with three columns, one twice the size than the others: | `grid-template-columns: 1fr 2fr 1fr`     |
 
 ---
 
@@ -134,11 +148,11 @@ Easy, right? A one column grid isn't very interesting though, so let's add grid 
 
 <SplitLayoutLeft>
 
-* Dividing lines that make up the structure of the grid
-* Are vertical and horizontal
-* Are numbered by default but can be named for easier positioning
+- Dividing lines that make up the structure of the grid
+- Are vertical and horizontal
+- Are numbered by default but can be named for easier positioning
 
-<img src={gridLineExample} alt="Grid lines" />
+<img src={gridLineExample} alt='Grid lines' />
 
 <small className="caption" style={{fontSize: '16px', textAlign: 'center'}}>Andrew, Rachel. <em>Smashing Magazine</em>. (2020, Jan 10.) <a href="https://www.smashingmagazine.com/2020/01/understanding-css-grid-lines/">Understanding CSS Grid: Grid Lines</a></small>
 </SplitLayoutLeft>
@@ -149,15 +163,23 @@ Easy, right? A one column grid isn't very interesting though, so let's add grid 
 
 <SplitLayoutLeft>
 
-* You define grid tracks; grid lines are automatically defined by the grid
-* Allow us to position items in the grid
-* Numbered direction is based on the writing mode of the page
+- You define grid tracks; grid lines are automatically defined by the grid
+- Allow us to position items in the grid
+- Numbered direction is based on the writing mode of the page
 
-<small className="caption" style={{fontSize: '20px', textAlign: 'center'}}>Grid Lines</small>
+<small className='caption' style={{ fontSize: '20px', textAlign: 'center' }}>
+  Grid Lines
+</small>
 
-<img src={gridLineExample2} alt="Grid lines" style={{width: '60%', margin: '5px auto 15px'}} />
+<img
+  src={gridLineExample2}
+  alt='Grid lines'
+  style={{ width: '60%', margin: '5px auto 15px' }}
+/>
 
-<small className="caption" style={{fontSize: '20px', textAlign: 'center'}}>Grid Tracks</small>
+<small className='caption' style={{ fontSize: '20px', textAlign: 'center' }}>
+  Grid Tracks
+</small>
 
 <img src={gridTrackExample} alt="Grid tracks" style={{width: '60%', margin: '5px auto'}} />
 <small className="caption" style={{fontSize: '16px', textAlign: 'center'}}>Moz://a. <a href="https://mozilladevelopers.github.io/playground/css-grid">Introduction to CSS Grid Layout: Terminology</a></small>
@@ -169,9 +191,9 @@ Easy, right? A one column grid isn't very interesting though, so let's add grid 
 
 <SplitLayoutLeft>
 
-* Spaces between columns and rows are *grid gaps*
-* Can independently adjust the gap for columns using `grid-column-gap` or rows using `grid-row-gap`. The shorthand property is `grid-gap`.
-* Are being deprecated in favor of `row-gap`, `column-gap`, and `gap`
+- Spaces between columns and rows are _grid gaps_
+- Can independently adjust the gap for columns using `grid-column-gap` or rows using `grid-row-gap`. The shorthand property is `grid-gap`.
+- Are being deprecated in favor of `row-gap`, `column-gap`, and `gap`
 
 <iframe
      src="https://codesandbox.io/embed/compassionate-bash-94fvs?autoresize=1&view=preview&fontsize=14&hidenavigation=1&initialpath=grid-gaps.html&module=%2Fgrid.css&theme=dark"
@@ -187,11 +209,11 @@ Easy, right? A one column grid isn't very interesting though, so let's add grid 
 
 <SplitLayoutLeft>
 
-* A single `unit` of the grid
-* Similar to table cells
-* Contain grid items
+- A single `unit` of the grid
+- Similar to table cells
+- Contain grid items
 
-<img src={gridCellExample} alt="Grid Cell" />
+<img src={gridCellExample} alt='Grid Cell' />
 
 <small className="caption" style={{fontSize: '16px', textAlign: 'center'}}>MDN Web Docs. (2019, Mar 29.) <a href="https://developer.mozilla.org/en-US/docs/Glossary/Grid_cell">Grid Cell</a></small>
 </SplitLayoutLeft>
@@ -202,8 +224,8 @@ Easy, right? A one column grid isn't very interesting though, so let's add grid 
 
 <SplitLayoutLeft>
 
-* All direct children of a grid container automatically become grid items
-* Grid items can use Flexbox for more control over positioning and alignment within the grid
+- All direct children of a grid container automatically become grid items
+- Grid items can use Flexbox for more control over positioning and alignment within the grid
 
 <iframe
      src="https://codesandbox.io/embed/compassionate-bash-94fvs?autoresize=1&fontsize=14&view=preview&hidenavigation=1&initialpath=grid-items.html&module=%2Fgrid.css&theme=dark"
@@ -219,9 +241,9 @@ Easy, right? A one column grid isn't very interesting though, so let's add grid 
 
 <SplitLayoutLeft>
 
-* The total space surrounded by four grid lines
-* Can be made up of any number of grid cells
-* Doesn't have to represent all cells in a grid, but can
+- The total space surrounded by four grid lines
+- Can be made up of any number of grid cells
+- Doesn't have to represent all cells in a grid, but can
 
 <img src={gridAreaDiagram} alt="Diagram showing how the grid-area property works" />
 </SplitLayoutLeft>
@@ -232,9 +254,9 @@ Easy, right? A one column grid isn't very interesting though, so let's add grid 
 
 <SplitLayoutLeft>
 
-* `auto` indicates auto placement or a span of 1
-* `span` indicates how many rows or columns to span based on grid lines
-* Negative values select grid lines in reverse
+- `auto` indicates auto placement or a span of 1
+- `span` indicates how many rows or columns to span based on grid lines
+- Negative values select grid lines in reverse
 
 <iframe
      src="https://codesandbox.io/embed/compassionate-bash-94fvs?autoresize=1&fontsize=14&view=preview&hidenavigation=1&initialpath=%2Fgrid-areas.html&module=%2Fgrid.css&theme=dark"
@@ -248,10 +270,10 @@ Easy, right? A one column grid isn't very interesting though, so let's add grid 
 
 # Firefox Grid Inspector
 
-* Firefox has the best developer support for working with grids
-* In the DevTools, you can enable grid and subgrid overlays to see how the browser interprets your positioning
+- Firefox has the best developer support for working with grids
+- In the DevTools, you can enable grid and subgrid overlays to see how the browser interprets your positioning
 
-<img src={firefoxDevtools} alt="Firefox grid DevTools" />
+<img src={firefoxDevtools} alt='Firefox grid DevTools' />
 
 ---
 
@@ -259,9 +281,9 @@ Easy, right? A one column grid isn't very interesting though, so let's add grid 
 
 Toggling the "overlay grid" checkbox for a particular grid, subgrid, or nested grid will show the grid lines for that grid.
 
-<div style={{display: 'grid', gridTemplateColumns: '48% 48%', gap: '4%'}}>
-<img src={firefoxGridOverlay} alt="Firefox grid overlay" />
-<img src={firefoxSubgridOverlay} alt="Firefox subgrid overlay" />
+<div style={{ display: 'grid', gridTemplateColumns: '48% 48%', gap: '4%' }}>
+  <img src={firefoxGridOverlay} alt='Firefox grid overlay' />
+  <img src={firefoxSubgridOverlay} alt='Firefox subgrid overlay' />
 </div>
 
 ---
@@ -270,8 +292,8 @@ Toggling the "overlay grid" checkbox for a particular grid, subgrid, or nested g
 
 <SplitLayoutLeft>
 
-* _Explicit_ grid is based on the `grid-template-columns` and `grid-template-rows` you define
-* If there's more content than there are defined rows and columns, then the grid creates rows and columns in the _implicit_ grid
+- _Explicit_ grid is based on the `grid-template-columns` and `grid-template-rows` you define
+- If there's more content than there are defined rows and columns, then the grid creates rows and columns in the _implicit_ grid
 
 <img src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F99B559425C16F8B811" alt="Explicit vs. implicit grid example" />
 <small className="caption" style={{fontSize: '16px', textAlign: 'center'}}>Playing With Cocoy's Graphics. (2018, Dec 21.) <a href="https://ldrerin.tistory.com/381">CSS [7] Explicit vs. Implicit Grid</a></small>
@@ -281,8 +303,8 @@ Toggling the "overlay grid" checkbox for a particular grid, subgrid, or nested g
 
 # Implicit Grid
 
-* The grid tracks in rows and columns in the _implicit_ grid are auto-sized by default based on their content
-* The `grid-auto-rows` and `grid-auto-columns` properties define size of implicit grid tracks
+- The grid tracks in rows and columns in the _implicit_ grid are auto-sized by default based on their content
+- The `grid-auto-rows` and `grid-auto-columns` properties define size of implicit grid tracks
 
 ---
 
@@ -290,9 +312,9 @@ Toggling the "overlay grid" checkbox for a particular grid, subgrid, or nested g
 
 <SplitLayoutLeft>
 
-* `minmax()` specifies minimum and maximum grid track size for rows and columns
-* Allows grid tracks to expand to fit content that's added
-* Can use this when setting explicit or implicit grid rows or columns
+- `minmax()` specifies minimum and maximum grid track size for rows and columns
+- Allows grid tracks to expand to fit content that's added
+- Can use this when setting explicit or implicit grid rows or columns
 
 <img src={minMaxDiagram} alt="minmax() diagram" />
 </SplitLayoutLeft>
@@ -301,43 +323,43 @@ Toggling the "overlay grid" checkbox for a particular grid, subgrid, or nested g
 
 # Fitting Tracks: `auto-fill` vs. `auto-fit`
 
-* Help in creating dynamic grids
-* `auto-fill` creates as many tracks in the grid as it can without overflowing the container
-  * Example: `grid-template-columns: repeat(auto-fill, 100px);`
-* `auto-fit` creates new tracks too, but after placing grid items, only creates as many tracks as needed and collapses empty repeated tracks
-  * Example: `grid-template-columns: repeat(auto-fill, 100px);`
+- Help in creating dynamic grids
+- `auto-fill` creates as many tracks in the grid as it can without overflowing the container
+  - Example: `grid-template-columns: repeat(auto-fill, 100px);`
+- `auto-fit` creates new tracks too, but after placing grid items, only creates as many tracks as needed and collapses empty repeated tracks
+  - Example: `grid-template-columns: repeat(auto-fill, 100px);`
 
 ---
 
 # Box Alignment in Grids
 
-* Grids have two axes that we can use to align grid items - __inline__ and __block__
-* Inline axis:
-  * Runs in same direction as text (i.e., horizontal in English)
-  * Items on this axis can be aligned with properties starting with `justify-`
-* Block axis:
-  * Crosses inline axis in direction blocks are shown down the page
-  * Items on this axis can be aligned with properties starting with `align-`
+- Grids have two axes that we can use to align grid items - **inline** and **block**
+- Inline axis:
+  - Runs in same direction as text (i.e., horizontal in English)
+  - Items on this axis can be aligned with properties starting with `justify-`
+- Block axis:
+  - Crosses inline axis in direction blocks are shown down the page
+  - Items on this axis can be aligned with properties starting with `align-`
 
 ---
 
 # Positioning Items Against Lines
 
-* You target a __line__ when placing items, not a __track__
-* Items are placed using the following properties:
-  * `grid-column-start`
-  * `grid-column-end`
-  * `grid-row-start`
-  * `grid-row-end`
-* Don't need to specify `grid-row-end` if you want a grid item to span a whole row
+- You target a **line** when placing items, not a **track**
+- Items are placed using the following properties:
+  - `grid-column-start`
+  - `grid-column-end`
+  - `grid-row-start`
+  - `grid-row-end`
+- Don't need to specify `grid-row-end` if you want a grid item to span a whole row
 
 ---
 
 # Grid Item Placement Algorithm
 
-* Determines the order used for placing grid items in the grid
-* Placement flow behavior is set with the `grid-auto-flow` property
-* __Any grid item positioned to start or end on a line that goes in the same direction as the grid will be given priority placement. Everything else will flow around it.__
+- Determines the order used for placing grid items in the grid
+- Placement flow behavior is set with the `grid-auto-flow` property
+- **Any grid item positioned to start or end on a line that goes in the same direction as the grid will be given priority placement. Everything else will flow around it.**
 
 ---
 
@@ -347,13 +369,25 @@ Toggling the "overlay grid" checkbox for a particular grid, subgrid, or nested g
 
 Items fill all slots in the current _row_ before filling the next row
 
-Prioritizes items with __row start__ or __row end__ property. Other items are then flowed in around it using the normal flow.
+Prioritizes items with **row start** or **row end** property. Other items are then flowed in around it using the normal flow.
 
-<small className="caption" style={{fontSize: '20px', textAlign: 'center'}}><em>Row start</em> and <em>row end</em> properties not defined</small>
-<img src="https://gedd.ski/gif/grid-item-placement/1.gif" alt="Row auto-flow grid placement" style={{width: '70%', margin: '5px auto 25px'}} />
+<small className='caption' style={{ fontSize: '20px', textAlign: 'center' }}>
+  <em>Row start</em> and <em>row end</em> properties not defined
+</small>
+<img
+  src='https://gedd.ski/gif/grid-item-placement/1.gif'
+  alt='Row auto-flow grid placement'
+  style={{ width: '70%', margin: '5px auto 25px' }}
+/>
 
-<small className="caption" style={{fontSize: '20px', textAlign: 'center'}}><em>Row start</em> and <em>row end</em> properties defined</small>
-<img src="https://gedd.ski/gif/grid-item-placement/3.gif" alt="Item placement in grids with grid-auto-flow: row" style={{width: '70%', margin: '5px auto'}} />
+<small className='caption' style={{ fontSize: '20px', textAlign: 'center' }}>
+  <em>Row start</em> and <em>row end</em> properties defined
+</small>
+<img
+  src='https://gedd.ski/gif/grid-item-placement/3.gif'
+  alt='Item placement in grids with grid-auto-flow: row'
+  style={{ width: '70%', margin: '5px auto' }}
+/>
 
 <small className="caption" style={{fontSize: '16px', textAlign: 'center'}}>Geddes, Dave. <a href="https://gedd.ski/post/grid-item-placement/">How Items Flow Into a CSS Grid</a></small>
 </SplitLayoutLeft>
@@ -365,13 +399,26 @@ Prioritizes items with __row start__ or __row end__ property. Other items are th
 <SplitLayoutLeft>
 
 Column positioning doesn't get priority with this flow setting
-  * If an item has a column position, the browser will skip to the specified column. This can leave empty cells in the grid.
 
-<small className="caption" style={{fontSize: '20px', textAlign: 'center'}}><em>Row start</em> and <em>row end</em> properties not defined</small>
-<img src="https://gedd.ski/gif/grid-item-placement/1.gif" alt="Row auto-flow grid placement" style={{width: '70%', margin: '5px auto 25px'}} />
+- If an item has a column position, the browser will skip to the specified column. This can leave empty cells in the grid.
 
-<small className="caption" style={{fontSize: '20px', textAlign: 'center'}}><em>Row start</em> and <em>row end</em> properties defined</small>
-<img src="https://gedd.ski/gif/grid-item-placement/3.gif" alt="Item placement in grids with grid-auto-flow: row" style={{width: '70%', margin: '5px auto'}} />
+<small className='caption' style={{ fontSize: '20px', textAlign: 'center' }}>
+  <em>Row start</em> and <em>row end</em> properties not defined
+</small>
+<img
+  src='https://gedd.ski/gif/grid-item-placement/1.gif'
+  alt='Row auto-flow grid placement'
+  style={{ width: '70%', margin: '5px auto 25px' }}
+/>
+
+<small className='caption' style={{ fontSize: '20px', textAlign: 'center' }}>
+  <em>Row start</em> and <em>row end</em> properties defined
+</small>
+<img
+  src='https://gedd.ski/gif/grid-item-placement/3.gif'
+  alt='Item placement in grids with grid-auto-flow: row'
+  style={{ width: '70%', margin: '5px auto' }}
+/>
 
 <small className="caption" style={{fontSize: '16px', textAlign: 'center'}}>Geddes, Dave. <a href="https://gedd.ski/post/grid-item-placement/">How Items Flow Into a CSS Grid</a></small>
 </SplitLayoutLeft>
@@ -382,9 +429,9 @@ Column positioning doesn't get priority with this flow setting
 
 <SplitLayoutLeft>
 
-* Items fill up the current _column_ from top to bottom before starting to fill the next column
-* Prioritizes items with __column start__ or __column end__ property defined
-* Row positioning doesn't get priority with this flow setting
+- Items fill up the current _column_ from top to bottom before starting to fill the next column
+- Prioritizes items with **column start** or **column end** property defined
+- Row positioning doesn't get priority with this flow setting
 
 <img src="https://gedd.ski/gif/grid-item-placement/2.gif" alt="Column auto-flow grid placement" />
 <small className="caption" style={{fontSize: '16px', textAlign: 'center'}}>Geddes, Dave. <a href="https://gedd.ski/post/grid-item-placement/">How Items Flow Into a CSS Grid</a></small>
@@ -396,10 +443,10 @@ Column positioning doesn't get priority with this flow setting
 
 <SplitLayoutLeft>
 
-* Auto placement algorithm set to `sparse` by default
-* If auto placing an item leaves empty cells because items don't fit:
-  * `sparse`: those cells won't be used
-  * `dense`: those cells will be used if smaller items come up later
+- Auto placement algorithm set to `sparse` by default
+- If auto placing an item leaves empty cells because items don't fit:
+  - `sparse`: those cells won't be used
+  - `dense`: those cells will be used if smaller items come up later
 
 <img src={sparseDenseStackExample} alt="Sparse, dense, stack CSS grid example" />
 <small className="caption" style={{fontSize: '16px', textAlign: 'center'}}>Rego Casanovas, Manuel. (2014, Jun 19.) <a href="https://blogs.igalia.com/mrego/2014/06/19/css-grid-layout-automatic-placement/">CSS Grid Layout Automatic Placement</a></small>
@@ -411,7 +458,7 @@ Column positioning doesn't get priority with this flow setting
 
 <SplitLayoutLeft>
 
-* With `stack` option, algorithm looks for first empty cell and places all __auto__ positioned items in that cell (regardless of size), stacked on top of each other.
+- With `stack` option, algorithm looks for first empty cell and places all **auto** positioned items in that cell (regardless of size), stacked on top of each other.
 
 <img src={sparseDenseStackExample} alt="Sparse, dense, stack CSS grid example" />
 <small className="caption" style={{fontSize: '16px', textAlign: 'center'}}>Rego Casanovas, Manuel. (2014, Jun 19.) <a href="https://blogs.igalia.com/mrego/2014/06/19/css-grid-layout-automatic-placement/">CSS Grid Layout Automatic Placement</a></small>
@@ -423,8 +470,8 @@ Column positioning doesn't get priority with this flow setting
 
 <SplitLayoutLeft>
 
-* The `span` keyword will make grid items span multiple rows or columns
-* Doesn't increase their placement priority
+- The `span` keyword will make grid items span multiple rows or columns
+- Doesn't increase their placement priority
 
 <img src="https://gedd.ski/gif/grid-item-placement/5.gif" alt="Span keyword in grid placement algorithm" />
 <small className="caption" style={{fontSize: '16px', textAlign: 'center'}}>Geddes, Dave. <a href="https://gedd.ski/post/grid-item-placement/">How Items Flow Into a CSS Grid</a></small>
@@ -436,8 +483,8 @@ Column positioning doesn't get priority with this flow setting
 
 <SplitLayoutLeft>
 
-* Can use `order` property to change the order of grid items, overriding the default document order placement
-* Works just like Flexbox order, with items set to `order: 0` by default
+- Can use `order` property to change the order of grid items, overriding the default document order placement
+- Works just like Flexbox order, with items set to `order: 0` by default
 
 <img src="https://gedd.ski/gif/grid-item-placement/order-1.gif" alt="Order in grid placement algorithm" />
 <small className="caption" style={{fontSize: '16px', textAlign: 'center'}}>Geddes, Dave. <a href="https://gedd.ski/post/grid-item-placement/">How Items Flow Into a CSS Grid</a></small>
@@ -449,8 +496,8 @@ Column positioning doesn't get priority with this flow setting
 
 <SplitLayoutLeft>
 
-* Giving a grid item `order: 1` makes it show up at the end
-* Can move grid items to beginning with negative order (`order: -1`), also like Flexbox
+- Giving a grid item `order: 1` makes it show up at the end
+- Can move grid items to beginning with negative order (`order: -1`), also like Flexbox
 
 <img src="https://gedd.ski/gif/grid-item-placement/order-1.gif" alt="Order in grid placement algorithm" />
 <small className="caption" style={{fontSize: '16px', textAlign: 'center'}}>Geddes, Dave. <a href="https://gedd.ski/post/grid-item-placement/">How Items Flow Into a CSS Grid</a></small>
@@ -462,8 +509,8 @@ Column positioning doesn't get priority with this flow setting
 
 <SplitLayoutLeft>
 
-* _AFTER_ row start/end positioning (in `grid-auto-flow: row`)
-* _AFTER_ column start/end positioning (in `grid-auto-flow: column`)
+- _AFTER_ row start/end positioning (in `grid-auto-flow: row`)
+- _AFTER_ column start/end positioning (in `grid-auto-flow: column`)
 
 <img src="https://gedd.ski/gif/grid-item-placement/order-3.gif" alt="Order happens after placement in grid placement algorithm" />
 <small className="caption" style={{fontSize: '16px', textAlign: 'center'}}>Geddes, Dave. <a href="https://gedd.ski/post/grid-item-placement/">How Items Flow Into a CSS Grid</a></small>
@@ -483,10 +530,10 @@ Column positioning doesn't get priority with this flow setting
 
 <SplitLayoutLeft>
 
-* You can nest grids by setting `display: grid` on a grid item
-* Makes the nested grid independent of the parent grid though
+- You can nest grids by setting `display: grid` on a grid item
+- Makes the nested grid independent of the parent grid though
 
-<img src={nestedGridExample} alt="Nested grid example" />
+<img src={nestedGridExample} alt='Nested grid example' />
 
 <small className="caption" style={{fontSize: '16px', textAlign: 'center'}}>Andrew, Rachel. <em>Smashing Magazine</em>. (2018, Jul 3.) <a href="https://www.smashingmagazine.com/2018/07/css-grid-2/">CSS Grid Level 2: Here Comes Subgrid</a></small>
 </SplitLayoutLeft>
@@ -499,22 +546,39 @@ Column positioning doesn't get priority with this flow setting
 
 Child grid's track sizes don't match the parent's track sizes
 
-__Alignment of the nested grid items with the parent grid becomes difficult__
+**Alignment of the nested grid items with the parent grid becomes difficult**
 
-<img src={nestedGridExample} alt="Nested grid example" />
+<img src={nestedGridExample} alt='Nested grid example' />
 
 <small className="caption" style={{fontSize: '16px', textAlign: 'center'}}>Andrew, Rachel. <em>Smashing Magazine</em>. (2018, Jul 3.) <a href="https://www.smashingmagazine.com/2018/07/css-grid-2/">CSS Grid Level 2: Here Comes Subgrid</a></small>
 </SplitLayoutLeft>
 
 ---
 
-<p style={{textAlign: 'center'}}>There must be a better way to align nested grids... 🤔</p>
+<p style={{ textAlign: 'center' }}>
+  There must be a better way to align nested grids... 🤔
+</p>
 
-<iframe src="https://giphy.com/embed/wMNK4IfeH86uQ" style={{width: '100%'}} height="259" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p style={{textAlign: 'center', margin: 0}}><a href="https://giphy.com/gifs/funny-willy-wonka-and-the-chocolate-factory-wMNK4IfeH86uQ" style={{fontSize: '16px'}}>via GIPHY</a></p>
+<iframe
+  src='https://giphy.com/embed/wMNK4IfeH86uQ'
+  style={{ width: '100%' }}
+  height='259'
+  frameBorder='0'
+  className='giphy-embed'
+  allowFullScreen></iframe>
+<p style={{ textAlign: 'center', margin: 0 }}>
+  <a
+    href='https://giphy.com/gifs/funny-willy-wonka-and-the-chocolate-factory-wMNK4IfeH86uQ'
+    style={{ fontSize: '16px' }}>
+    via GIPHY
+  </a>
+</p>
 
 ---
 
-<h1><em>Subgrids to the rescue!</em></h1>
+<h1>
+  <em>Subgrids to the rescue!</em>
+</h1>
 
 ---
 
@@ -522,10 +586,10 @@ __Alignment of the nested grid items with the parent grid becomes difficult__
 
 <SplitLayoutLeft>
 
-* Set the value `subgrid` on the `grid-template-rows` or `grid-template-columns` property (or both) for a grid item
-* Causes the nested grid to use the tracks defined on the parent grid instead of creating its own
+- Set the value `subgrid` on the `grid-template-rows` or `grid-template-columns` property (or both) for a grid item
+- Causes the nested grid to use the tracks defined on the parent grid instead of creating its own
 
-<img src={subgridExample} alt="Subgrid example" />
+<img src={subgridExample} alt='Subgrid example' />
 
 <small className="caption" style={{fontSize: '16px', textAlign: 'center'}}>Andrew, Rachel. <em>Smashing Magazine</em>. (2018, Jul 3.) <a href="https://www.smashingmagazine.com/2018/07/css-grid-2/">CSS Grid Level 2: Here Comes Subgrid</a></small>
 </SplitLayoutLeft>
@@ -536,10 +600,10 @@ __Alignment of the nested grid items with the parent grid becomes difficult__
 
 <SplitLayoutLeft>
 
-* Gaps are also inherited, but you can override them in the subgrid with the `grid-gap` property if desired
-* Only supported by Firefox right now
+- Gaps are also inherited, but you can override them in the subgrid with the `grid-gap` property if desired
+- Only supported by Firefox right now
 
-<img src={subgridExample} alt="Subgrid example" />
+<img src={subgridExample} alt='Subgrid example' />
 
 <small className="caption" style={{fontSize: '16px', textAlign: 'center'}}>Andrew, Rachel. <em>Smashing Magazine</em>. (2018, Jul 3.) <a href="https://www.smashingmagazine.com/2018/07/css-grid-2/">CSS Grid Level 2: Here Comes Subgrid</a></small>
 </SplitLayoutLeft>
@@ -548,14 +612,14 @@ __Alignment of the nested grid items with the parent grid becomes difficult__
 
 # Gotchas
 
-* [Can't use Grid (alone)](https://medium.com/@andybarefoot/a-masonry-style-layout-using-css-grid-8c663d355ebb) for Masonry-style layouts (all columns are same height)
-* Grid width is influenced by grid template settings and not always easy to debug
-* Subgrids are only supported in Firefox right now
+- [Can't use Grid (alone)](https://medium.com/@andybarefoot/a-masonry-style-layout-using-css-grid-8c663d355ebb) for Masonry-style layouts (all columns are same height)
+- Grid width is influenced by grid template settings and not always easy to debug
+- Subgrids are only supported in Firefox right now
 
 ---
 
 # Additional Reading
 
-* Rachel Andrew's [_Get Ready for CSS Grid Layout_](https://abookapart.com/products/get-ready-for-css-grid-layout)
-* [_How Items Flow Into a CSS Grid_](https://gedd.ski/post/grid-item-placement/)
-* [_Firefox DevTools Playground_](https://mozilladevelopers.github.io/playground/)
+- Rachel Andrew's [_Get Ready for CSS Grid Layout_](https://abookapart.com/products/get-ready-for-css-grid-layout)
+- [_How Items Flow Into a CSS Grid_](https://gedd.ski/post/grid-item-placement/)
+- [_Firefox DevTools Playground_](https://mozilladevelopers.github.io/playground/)
